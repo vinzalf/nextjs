@@ -55,22 +55,9 @@ useEffect(() => {
 
 
         <div id="menuGrid" className={styles.grid}>
-          <a href="#" className={styles.card}>
-            <h2>Overview</h2>
-          </a>
 
-          <a href="#" className={styles.card}>
-            <h2>News</h2>
-          </a>
-
-          <a
-            href="#"
-            className={styles.card}>
-            <h2>Connect</h2>
-          </a>
-
-          <a href="#" className={styles.card}>
-            <h2>Devlog</h2>
+          <a href="mailto:jrose@anxurus.com" className={styles.card}>
+            <h2>contact: JRose@Anxurus.com</h2>
           </a>
         </div>
       </main>

@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Tulpen+One&display=swap');
+
 .container {
-  padding: 0 2rem;
 }
 
 .main {
@@ -66,30 +67,51 @@
 }
 
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 800px;
+	height: 0;
+	opacity: 0;
+	animation: gridHeight 1.5s ease-in 10s forwards;
+	animation-play-state: paused;
+}
+
+@keyframes gridHeight {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+
+		opacity: 0;
+	}
+
+	100% {
+
+		opacity: 1;
+	}
 }
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+  padding: 0.5rem;
+  text-align: center;
+	font-family: 'Tulpen One', cursive;
+	letter-spacing: 0.5em;
+  color: white;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 150px;
+	
 }
 
 .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
-  border-color: #0070f3;
+text-shadow: 2px 2px 3px green;
 }
 
 .card h2 {
@@ -113,4 +135,163 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.bg_threejs {
+	opacity: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	border: none;
+	animation: threeFadeIn 5s ease-in 0s forwards;
+	animation-play-state: paused;
+	pointer-events: none;
+}
+
+.anxurus {
+		font-family: 'Cinzel', serif;
+  		margin: 0;
+  		line-height: 1.15;
+  		font-size: 5rem;
+		color: rgba(0,0,0,0.5);
+		text-shadow: 0px 0px 5px rgba(200,200,200,0.5);
+		letter-spacing: 0.8em;
+		text-indent: 0.5em;
+		width: 100%;
+		text-align: center;
+		box-shadow: 0px 0px 3px rgba(150,150,150,0.4);
+		background-color: rgba(10,10,10,0.1);
+		backdrop-filter: blur(3px);
+		opacity: 0;
+
+		animation: fadeIn 5s ease-in 5s forwards;
+		animation-play-state: paused;
+		z-index: 1;
+
+}
+
+.bg_cuneiform {
+		background-image: linear-gradient(to left, transparent, black), linear-gradient(to left, black, transparent), url("/cfbg.png");
+		position: fixed;
+		width: 100%;
+		height: 25px;
+		border: none;
+		pointer-events: none;
+		opacity: 0;
+		z-index: 0;
+		animation: fadeIn 10s ease-in 3s forwards, breathing 5s cubic-bezier(0.11, 0, 0.5, 0) 13s infinite normal forwards;
+		animation-play-state: paused;
+}
+.bg_cuneiform_bottom {
+		background-image: linear-gradient(to left, transparent, black), linear-gradient(to left, black, transparent), url("/cfbg.png");
+		position: fixed;
+		width: 100%;
+		height: 25px;
+		bottom: 0;
+		border: none;
+		pointer-events: none;
+		opacity: 0;
+		z-index: 0;
+		transform: rotate(180deg);
+		animation: fadeIn 10s ease-in 3s forwards, breathing 5s cubic-bezier(0.11, 0, 0.5, 0) 13s infinite normal forwards;
+		animation-play-state: paused;
+}
+
+.loading {
+		position: fixed;
+		top: 50%;
+		margin: 0;
+  		line-height: 2;
+  		font-size: 2rem;
+		font-style: italic;
+		color: rgba(255,255,255,1);
+		text-shadow: 0px 0px 2px rgba(0,0,0,1);
+		letter-spacing: 0.5em;
+		text-indent: 0.5em;
+		width: 100%;
+		text-align: center;
+		box-shadow: 0px 0px 3px rgba(150,150,150,0.4);
+		background-color: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(28,101,116,0.5) 100%), linear-gradient(90deg, rgba(28,101,116,0.5) 0%, rgba(0,0,0,0.8) 100%);
+		backdrop-filter: blur(3px);
+		z-index: 3;
+		opacity: 0.8;
+		animation: loadingAnimation 2s ease-in infinite;
+}
+
+.newpage {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+	width: 90%;
+	height: 80%;
+background: linear-gradient(to bottom, black, rgba(0,0,0,0.5));
+backdrop-filter: blur(2px);
+box-shadow: 0px 0px 3px rgba(25,25,25,0.5);
+z-index: -1;
+opacity: 0;
+
+}
+
+@keyframes loadingAnimation
+{
+	0% {
+		opacity: 0.8;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 0.5;
+		}
+
+		100% {
+			opacity: 1.0;
+		}
+}
+
+@keyframes threeFadeIn
+{
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.25;
+	}
+
+	100% {
+		opacity: 0.5;
+	}	
+}
+
+@keyframes breathing
+{
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.5;
+			
+		}
+
+		100% {
+			opacity: 1;
+
+		}
 }

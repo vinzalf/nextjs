@@ -172,6 +172,28 @@ text-shadow: 2px 2px 3px green;
 
 }
 
+@media screen and (max-width: 860px) and (min-width: 600px)  {
+	.anxurus {
+		font-size: 8vw;
+		min-width: 500px;
+	}
+	.grid {
+		height: 50px;
+		min-width: 500px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.anxurus {
+		font-size: 10vw;
+		color: rgba(50,50,50,1);
+		letter-spacing: 0.5em;
+	}
+	.grid {
+		height: 100px;
+	}
+}
+
 .bg_cuneiform {
 		background-image: linear-gradient(to left, transparent, black), linear-gradient(to left, black, transparent), url("/cfbg.png");
 		position: fixed;
